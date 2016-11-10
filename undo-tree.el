@@ -3952,7 +3952,7 @@ using `undo-tree-redo' or `undo-tree-visualizer-redo'."
     (let ((parent undo-tree-visualizer-parent-buffer)
 	  window)
       ;; kill visualizer buffer
-      (kill-buffer nil)
+      (quit-restore-window nil 'kill)
       ;; switch back to parent buffer
       (unwind-protect
 	  (if (setq window (get-buffer-window parent))
